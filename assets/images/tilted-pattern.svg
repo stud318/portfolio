@@ -1,0 +1,10 @@
+<svg width="0" height="0">
+    <defs>
+        <pattern id="tilted-square-pattern" x="0" y="0" width="1" height="1" patternUnits="userSpaceOnUse">
+            <circle cx="25" cy="25" r="20" fill="lightgreen" opacity="0.5" />
+            <circle cx="75" cy="75" r="20" fill="lightblue" opacity="0.5" />
+            <rect x="50" y="0" width="50" height="50" fill="lightgreen" opacity="0.5" />
+            <rect x="0" y="50" width="50" height="50" fill="lightblue" opacity="0.5" />
+        </pattern>
+    </defs>
+</svg>
