@@ -107,9 +107,9 @@ function closeCvModal() {
 }
 
 
-// Video Modal Functionality (existing code)
+// Video Modal Functionality
 const modal = document.getElementById('videoModal');
-const modalVideo = document.getElementById('modalVideo');
+const modalIframe = document.getElementById('modalIframe');
 const closeBtn = document.querySelector('.close');
 const viewDemoButtons = document.querySelectorAll('.view-demo-btn');
 
@@ -118,28 +118,25 @@ viewDemoButtons.forEach(button => {
     button.addEventListener('click', (e) => {
         e.preventDefault();
         const videoSrc = button.getAttribute('data-video');
-        console.log('Playing video:', videoSrc); 
-        modalVideo.src = videoSrc;
-        modal.style.display = 'block';
-        modalVideo.play();  
+        modalIframe.src = videoSrc; // Set the iframe src to Google Drive preview URL
+        modal.style.display = 'flex'; // Show the modal
     });
 });
 
 // Close Modal when X is clicked
 closeBtn.addEventListener('click', () => {
     modal.style.display = 'none';
-    modalVideo.pause();
-    modalVideo.src = '';
+    modalIframe.src = ''; // Reset iframe source when modal is closed
 });
 
 // Close Modal when clicking outside the modal content
 window.addEventListener('click', (e) => {
     if (e.target == modal) {
         modal.style.display = 'none';
-        modalVideo.pause();
-        modalVideo.src = '';
+        modalIframe.src = ''; // Reset iframe source
     }
 });
+
 
 // Initialize Radar Charts using Chart.js (existing code)
 document.addEventListener('DOMContentLoaded', () => {
